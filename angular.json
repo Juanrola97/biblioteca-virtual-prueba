@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "biblioteca-virtual-prueba"
+    }
+  },
+  "defaultProject": "biblioteca-virtual-prueba",
+  "cli": {
+    "analytics": "e5b12917-9d11-434c-a211-fe51f1ad9efb"
+  }
 }
