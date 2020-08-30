@@ -24,44 +24,52 @@ export class IndexComponent implements OnInit {
   }
 
   msg:string = '';
+  id:number = 1;
 
-  employees = [
-    {'name': 'Fazt', position: 'manager', email:'email@email.com'},
-    {'name': 'Juan', position: 'Designer', email:'email@email.com'},
-    {'name': 'Pedro', position: 'Programmer', email:'email@email.com'}
+  libros = [
+    {'id': '1', 'nombre': 'Lorem ipsum ', 'nombre_autor':'Albero, Miguel', 'editorial':'fugiat nulla', 'ano_publicacion':'1997-03-12'},
+    {'id': '2', 'nombre': 'Lorem ipsum ', 'nombre_autor':'Albero, Miguel', 'editorial':'fugiat nulla', 'ano_publicacion':'1997-03-12'},
+    {'id': '3', 'nombre': 'Lorem ipsum ', 'nombre_autor':'Albero, Miguel', 'editorial':'fugiat nulla', 'ano_publicacion':'1997-03-12'},
+    {'id': '4', 'nombre': 'Lorem ipsum ', 'nombre_autor':'Albero, Miguel', 'editorial':'fugiat nulla', 'ano_publicacion':'1997-03-12'},
+    {'id': '5', 'nombre': 'Lorem ipsum ', 'nombre_autor':'Albero, Miguel', 'editorial':'fugiat nulla', 'ano_publicacion':'1997-03-12'},
+    {'id': '6', 'nombre': 'Lorem ipsum ', 'nombre_autor':'Albero, Miguel', 'editorial':'fugiat nulla', 'ano_publicacion':'1997-03-12'},
+    {'id': '7', 'nombre': 'Lorem ipsum ', 'nombre_autor':'Albero, Miguel', 'editorial':'fugiat nulla', 'ano_publicacion':'1997-03-12'},
+    {'id': '8', 'nombre': 'Lorem ipsum ', 'nombre_autor':'Albero, Miguel', 'editorial':'fugiat nulla', 'ano_publicacion':'1997-03-12'},
   ];
 
   model:any = {};
   model2:any = {};
   hideUpdate:boolean = true;
 
-  addEmployee():void{
-    this.employees.push(this.model);
+  addLibro():void{
+    this.libros.push(this.model);
     this.msg = 'campo agregado';
   }
 
-  deleteEmployee(i):void {
+  deleteLibro(i):void {
     var answer = confirm('Estas seguro querer eliminarlo?');
     if(answer) {
-      this.employees.splice(i, 1);
+      this.libros.splice(i, 1);
       this.msg = 'campo eliminado';
     }
   }
 
   myValue;
-  editEmployee(i):void {
+  editLibro(i):void {
     this.hideUpdate = false;
-    this.model2.name = this.employees[i].name;
-    this.model2.position = this.employees[i].position;
-    this.model2.email = this.employees[i].email;
+    this.model2.id = this.libros[i].id;
+    this.model2.nombre = this.libros[i].nombre;
+    this.model2.nombre_autor = this.libros[i].nombre_autor;
+    this.model2.editorial = this.libros[i].editorial;
+    this.model2.ano_publicacion = this.libros[i].ano_publicacion;
     this.myValue = i;
   }
 
-  updateEmployee():void {
+  updateLibro():void {
     let i = this.myValue;
-    for(let j = 0; j < this.employees.length; j++){
+    for(let j = 0; j < this.libros.length; j++){
       if(i == j) {
-        this.employees[i] = this.model2;
+        this.libros[i] = this.model2;
         this.msg = 'campo actualizado';
         this.model2 = {};
       }
