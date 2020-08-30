@@ -3,17 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InicioComponent } from 'src/app/index/inicio/inicio.component';
+import { IndexComponent } from '../app/view/inicio/index/index.component';
+import { PaginatePipe } from '../app/pipes/paginate.pipe'
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
-    
+    IndexComponent,
+    PaginatePipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

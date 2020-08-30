@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InicioComponent } from './index/inicio/inicio.component';
+import { IndexComponent } from '../app/view/inicio/index/index.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/inicio", pathMatch: "full" },
-  { path: "inicio", component: InicioComponent }
+  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: 'index', component: IndexComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
